@@ -4,6 +4,6 @@ using GuessTheNumber;
 class Program {
     static void Main(string[] args){
        Game game = new();
-       game.checkGuess(); // Iniciamos el juego
+        game.startGame(); // Iniciamos el juego
     }
 }
