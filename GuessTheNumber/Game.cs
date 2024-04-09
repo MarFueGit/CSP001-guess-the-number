@@ -4,13 +4,15 @@ namespace GuessTheNumber //Usamos namespace para organizar y estructurar el codi
 {
     public class Game {
         private int targetNumber; // atributo privado que contiene un numero random a adivinar
-        private Player player1; //jugador 1
+        private Player _humanPlayer; //jugador 1
+        private Player _AIPlayer; //jugador 2
         private bool win = false; // esta variable nos dice si ya gano
 
         public Game(){ // Cambiamos el modificador de acceso a público
             //Generamos el numero aleatorio a adivinar
             this.RandomNumberGenerator();
-            this.player1 = new Player("Mary");
+            this._humanPlayer = new HumanPlayer("Mary");
+            this._AIPlayer = new AIPlayer("Computadora");
         }
 
         private void RandomNumberGenerator(){ //Este método privado genera un número aleatorio que el jugador debe adivinar
@@ -21,17 +23,27 @@ namespace GuessTheNumber //Usamos namespace para organizar y estructurar el codi
         //Metodo publico para iniciar el juego
         public void startGame(){
             while (!this.win){ //Utilizamos el bucle While que continua ejecutandose mientras no haya ganador.
-                this.player1.MakeGuess();
-                this.checkGuess(this.player1.GetLastGuess(), this.targetNumber);//Verificamos si el intento es correcto llamando al metodo checkGuess().
+              //Empezamos con HumanPlayer, con su intento
+              int player1Number = this._humanPlayer.MakeGuess();
+              if (this.checkGuess(player1Number, this.targetNumber))
+              {
+                Console.WriteLine($"{this._humanPlayer.name} ha ganado \n");
+              }else{
+                int computerNumber = this._AIPlayer.MakeGuess();
+                if (this.checkGuess(computerNumber, this.targetNumber))
+                {
+                    Console.WriteLine($"{this._AIPlayer.name} ha ganado \n");
+                }
+              }  
             }
         }
 
         //Metodo para ver si el jugador adivino el numero
-        public void checkGuess(int guess, int targetNumber){ // Cambiamos el modificador de acceso a publico
+        public bool checkGuess(int guess, int targetNumber){ // Cambiamos el modificador de acceso a publico
                     //Validamos el numero es entero
                     if (guess == targetNumber){
                         this.win = true;
-                        Console.WriteLine("Haz adivinado!");
+                        return true;
                     }else{
                         //Verificamos el número es mayor o menor que la entrada del usuario
                         bool esMayor = guess > this.targetNumber;
@@ -40,6 +52,7 @@ namespace GuessTheNumber //Usamos namespace para organizar y estructurar el codi
                         }else{
                             Console.WriteLine("Intenta con otro número! Uno mayor \n");
                         }
+                        return false;
             }
         }
     }
