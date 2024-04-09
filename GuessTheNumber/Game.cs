@@ -1,28 +1,28 @@
 using System;
 
-namespace GuessTheNumber //Usamos namespace para organizar las clases
+namespace GuessTheNumber //Usamos namespace para organizar y estructurar el codigo.
 {
     public class Game {
-        private int targetNumber;
-        private Player player1;
-        private bool win = false;
+        private int targetNumber; // atributo privado que contiene un numero random a adivinar
+        private Player player1; //jugador 1
+        private bool win = false; // esta variable nos dice si ya gano
 
-        public Game(){ // Change the access modifier to public
+        public Game(){ // Cambiamos el modificador de acceso a público
             //Generamos el numero aleatorio a adivinar
             this.RandomNumberGenerator();
             this.player1 = new Player("Mary");
         }
 
-        private void RandomNumberGenerator(){
-            Random r = new Random ();
-            this.targetNumber = r.Next(1 ,100);
+        private void RandomNumberGenerator(){ //Este método privado genera un número aleatorio que el jugador debe adivinar
+            Random r = new Random ();//Utiliza la clase Rndom para generar un numero aleatorio entre 1 y 100.
+            this.targetNumber = r.Next(1 ,100); // y se lo asigna al aributo targetNumber.
         }
 
-        //Metodo para iniciar el juego
+        //Metodo publico para iniciar el juego
         public void startGame(){
-            while (!this.win){
+            while (!this.win){ //Utilizamos el bucle While que continua ejecutandose mientras no haya ganador.
                 this.player1.MakeGuess();
-                this.checkGuess(this.player1.GetLastGuess(), this.targetNumber);
+                this.checkGuess(this.player1.GetLastGuess(), this.targetNumber);//Verificamos si el intento es correcto llamando al metodo checkGuess().
             }
         }
 
