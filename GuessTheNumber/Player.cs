@@ -4,14 +4,20 @@ namespace GuessTheNumber
 { //Este es un espacio de nombres que contiene la definicion de la clase player, ayuda a organizar y estructurar el codigo.
     public abstract class Player
     {
-        public string name = ""; //Atributo que almacena el nombre del jugador.
-        public int lastGuess; // Atributo que almacena el ultimo intento del jugador.
+        public string name; //Campo que almacena el nombre del jugador.
+        public string Name { 
+           get { return name; }
+            set { name = value; }  
+        }
+    
 
-        public List<int> guesses;
+        public int lastGuess; // Campo que almacena el ultimo intento del jugador.
+
+        public List<int> guesses; //Campo que almacena los numeros por turno
 
         protected Player(string name){ // Este metodo publico devuelve el valor del ultimo intento del jugador (lastGuess)
             this.lastGuess = 0;
-            this.name = name;
+            this.Name = name;
             this.guesses = new List<int>();
         }
 

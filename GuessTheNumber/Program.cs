@@ -4,6 +4,6 @@ using GuessTheNumber; // Este es un Namespace personalizado llamado GuessTheNumb
 class Program {
     static void Main(string[] args){
        Game game = new();
-        game.startGame(); // Iniciamos el juego
+        game.StartGame(); // Iniciamos el juego
     }
 }
