@@ -1,33 +1,35 @@
-using System; // Esta línea importa el espacio de nombres System, proporcionando funcionalidades básicas del sistema.
+using System;
+using System.Collections.Generic;
 
 namespace GuessTheNumber
-{ //Este es un espacio de nombres que contiene la definicion de la clase player, ayuda a organizar y estructurar el codigo.
+{
+    // Clase abstracta que representa a un jugador en el juego de adivinar el número
     public abstract class Player
     {
-        public string name; //Campo que almacena el nombre del jugador.
-        public string Name { 
-           get { return name; }
-            set { name = value; }  
-        }
-    
+        // Propiedad para almacenar el nombre del jugador
+        public string Name { get; set; }
 
-        public int lastGuess; // Campo que almacena el ultimo intento del jugador.
+        // Campo para almacenar el último intento del jugador
+        private int lastGuess;
 
-        public List<int> guesses; //Campo que almacena los numeros por turno
+        // Lista para almacenar los números por turno
+        protected List<int> guesses;
 
-        protected Player(string name){ // Este metodo publico devuelve el valor del ultimo intento del jugador (lastGuess)
-            this.lastGuess = 0;
-            this.Name = name;
-            this.guesses = new List<int>();
-        }
-
-        //metodo para obtener el ultimo intento del player
-        public int GetLastGuess(){
-            return this.lastGuess;
+        // Constructor de la clase Player
+        protected Player(string name)
+        {
+            Name = name;
+            lastGuess = 0;
+            guesses = new List<int>();
         }
 
+        // Método abstracto para que el jugador haga un intento de adivinar el número
         public abstract int MakeGuess();
 
+        // Método para obtener el último intento del jugador
+        public int GetLastGuess()
+        {
+            return lastGuess;
+        }
     }
-
 }
