@@ -9,9 +9,6 @@ namespace GuessTheNumber
         // Propiedad para almacenar el nombre del jugador
         public string Name { get; set; }
 
-        // Campo para almacenar el último intento del jugador
-        private int lastGuess;
-
         // Lista para almacenar los números por turno
         protected List<int> guesses;
 
@@ -19,17 +16,10 @@ namespace GuessTheNumber
         protected Player(string name)
         {
             Name = name;
-            lastGuess = 0;
             guesses = new List<int>();
         }
 
         // Método abstracto para que el jugador haga un intento de adivinar el número
         public abstract int MakeGuess();
-
-        // Método para obtener el último intento del jugador
-        public int GetLastGuess()
-        {
-            return lastGuess;
-        }
     }
 }
