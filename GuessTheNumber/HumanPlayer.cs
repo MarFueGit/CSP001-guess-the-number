@@ -24,7 +24,7 @@ namespace GuessTheNumber
             else
             {
                 Console.WriteLine("Entrada inválida. Inténtalo de nuevo."); // Mensaje de error si la entrada no es válida
-                return MakeGuess(); // Llamada recursiva al método para solicitar nuevamente la entrada
+                return 0; // Llamada recursiva al método para solicitar nuevamente la entrada
             }
         }
     }
