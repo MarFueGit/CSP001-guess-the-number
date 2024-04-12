@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "tcdYlRuaMaZQZceaQrCGsgDMz7nWbrTKxcwB8Pn2lzXHgZves6nd8YgIXmzNQEt2vegpqH++6yhcKFmwScyEMQ==",
+  "dgSpecHash": "7Q9T+x0nUyaK4a0+ryJP1NXV8gSJaMo3dBEiskgaKqQ75PaYViOmZrGWg3r2ey/iw2O2TQoDJsnBER7o9/elvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\maric\\Desktop\\laboratoria-c#\\CSP001-guess-the-number\\GuessTheNumber\\GuessTheNumber.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\maric\\.nuget\\packages\\microsoft.codeanalysis.fxcopanalyzers\\3.3.0\\microsoft.codeanalysis.fxcopanalyzers.3.3.0.nupkg.sha512",
+    "C:\\Users\\maric\\.nuget\\packages\\microsoft.codeanalysis.versioncheckanalyzer\\3.3.0\\microsoft.codeanalysis.versioncheckanalyzer.3.3.0.nupkg.sha512",
+    "C:\\Users\\maric\\.nuget\\packages\\microsoft.codequality.analyzers\\3.3.0\\microsoft.codequality.analyzers.3.3.0.nupkg.sha512",
+    "C:\\Users\\maric\\.nuget\\packages\\microsoft.netcore.analyzers\\3.3.0\\microsoft.netcore.analyzers.3.3.0.nupkg.sha512",
+    "C:\\Users\\maric\\.nuget\\packages\\microsoft.netframework.analyzers\\3.3.0\\microsoft.netframework.analyzers.3.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

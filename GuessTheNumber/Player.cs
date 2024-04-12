@@ -7,16 +7,16 @@ namespace GuessTheNumber
     public abstract class Player
     {
         // Propiedad para almacenar el nombre del jugador
-        public string Name { get; set; }
+        public string Name { get; }
 
         // Lista para almacenar los números por turno
-        protected List<int> guesses;
+         public List<int> Guesses { get; }
 
         // Constructor de la clase Player
         protected Player(string name)
         {
             Name = name;
-            guesses = new List<int>();
+            Guesses = new List<int>();
         }
 
         // Método abstracto para que el jugador haga un intento de adivinar el número

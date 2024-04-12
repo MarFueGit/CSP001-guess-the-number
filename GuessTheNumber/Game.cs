@@ -4,9 +4,9 @@ namespace GuessTheNumber
 {
     public class Game
     {
-        public int TargetNumber { get; private set; }
-        public Player HumanPlayer { get; private set; }
-        public Player AIPlayer { get; private set; }
+        private int TargetNumber;
+        private readonly Player HumanPlayer;
+        private readonly Player AIPlayer;
 
         private bool win = false;
 
@@ -48,5 +48,16 @@ namespace GuessTheNumber
             Console.WriteLine($"Intenta con otro número! Uno {(guess > TargetNumber ? "menor" : "mayor")} \n");
             return false;
         }
+
+        //Este constructor es para poder hacer el test
+        public Game(int targetNumber, Player humanPlayer, Player aiPlayer)
+        {
+            this.TargetNumber = targetNumber;
+            this.HumanPlayer = humanPlayer;
+            this.AIPlayer = aiPlayer;
+        }
+
     }
+
+
 }

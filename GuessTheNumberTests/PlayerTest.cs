@@ -5,7 +5,7 @@ using GuessTheNumber; // Assuming your Player class is in the GuessTheNumber nam
 [TestClass]
 public class PlayerTests
 {
-    [TestMethod]
+[TestMethod]
     public void Constructor_SetsName()
     {
         // Arrange

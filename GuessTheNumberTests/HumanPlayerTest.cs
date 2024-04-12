@@ -1,6 +1,6 @@
-namespace GuessTheNumberTests;
+namespace HumanPlayerTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GuessTheNumber; // Assuming your Player class is in the GuessTheNumber namespace
+using GuessTheNumber;
 
 [TestClass]
 public class HumanPlayerTest
@@ -19,38 +19,35 @@ public class HumanPlayerTest
     }
 
     [TestMethod]
-    public void Method_MakeGuess_Return_OK()
+    public void Method_MakeGuess_ReturnsCorrectNumber()
     {
-        // numero a regresar
+        // Arrange
         int numberExpected = 10;
-
-        //Actuamos
-        Player player = new HumanPlayer("Mary");
-        // mandamos a llamar a la clase mock y le pasamos el numero simulado
         var consoleInputReader = new TestConsoleInputReader("10");
         Console.SetIn(consoleInputReader);
+        Player player = new HumanPlayer("Mary");
 
+        // Act
         int numberPlayer = player.MakeGuess();
-        // Assert - Verificar
-        Assert.AreEqual(numberExpected, numberPlayer);
 
+        // Assert
+        Assert.AreEqual(numberExpected, numberPlayer);
     }
 
-     public void Method_MakeGuess_Return_0()
+    [TestMethod]
+    public void Method_MakeGuess_ReturnsZeroOnNonNumericInput()
     {
-        // numero a regresar
+        // Arrange
         int numberExpected = 0;
-
-        //Actuamos
-        Player player = new HumanPlayer("Mary");
-        // mandamos a llamar a la clase mock y le pasamos el numero simulado
         var consoleInputReader = new TestConsoleInputReader("Mary\n");
         Console.SetIn(consoleInputReader);
+        Player player = new HumanPlayer("Mary");
 
+        // Act
         int numberPlayer = player.MakeGuess();
-        // Assert - Verificar
-        Assert.AreEqual(numberExpected, numberPlayer);
 
+        // Assert
+        Assert.AreEqual(numberExpected, numberPlayer);
     }
 
     // Mock para simular la entrada del teclado del usuario
@@ -75,3 +72,4 @@ public class HumanPlayerTest
         }
     }
 }
+

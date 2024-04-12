@@ -18,7 +18,7 @@ namespace GuessTheNumber
             if (int.TryParse(input, out int number))
             {
                 // Agregamos el numero ingresao a la lista de suposiciuones
-                guesses.Add(number);
+                Guesses.Add(number);
                 return number; // Si la entrada es un número entero válido, lo retornamos
             }
             else
