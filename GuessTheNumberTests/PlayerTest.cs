@@ -1,35 +1,35 @@
 namespace GuessTheNumberTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GuessTheNumber; // Assuming your Player class is in the GuessTheNumber namespace
+using GuessTheNumber; 
 
 [TestClass]
 public class PlayerTests
 {
-[TestMethod]
+    [TestMethod]
     public void Constructor_SetsName()
     {
-        // Arrange
+        // Arrange - Preparar
         string playerName = "TestPlayer";
 
-        // Act
+        // Act - actuar
         Player player = new TestPlayer(playerName);
 
-        // Assert
+        // Assert - Verificar
         Assert.AreEqual(playerName, player.Name);
     }
 
-    // Concrete subclass for testing purposes
+    // Creo una subclase de la clase player para hacer el test este es el mock.
     private class TestPlayer : Player
     {
-        // Constructor for the test player
+        // Constructor para el reproductor de prueba.
         public TestPlayer(string name) : base(name)
         {
         }
 
-        // Implement the abstract MakeGuess method
+        // Implemento el método abstracto MakeGuess
         public override int MakeGuess()
         {
-            // For testing purposes, just return a fixed guess
+            // retornamos un numero mockeado para prueba.
             return 42;
         }
     }

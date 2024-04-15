@@ -10,7 +10,7 @@ namespace GuessTheNumber
         public string Name { get; }
 
         // Lista para almacenar los números por turno
-         public List<int> Guesses { get; }
+        public List<int> Guesses { get; }
 
         // Constructor de la clase Player
         protected Player(string name)

@@ -1,5 +1,4 @@
 using System;
-
 namespace GuessTheNumber
 {
     // Clase que representa a un jugador humano en el juego de adivinar el número
