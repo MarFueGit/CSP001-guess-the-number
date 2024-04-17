@@ -50,7 +50,9 @@ public class HumanPlayerTest
         Assert.AreEqual(numberExpected, numberPlayer);
     }
 
-    // Mock para simular la entrada del teclado del usuario
+    /* Mock para simular la entrada del teclado del usuario
+     prueba el comportamiento del jugador humano en diferentes escenarios de entrada.*/
+     
     public class TestConsoleInputReader : System.IO.TextReader
     {
         private readonly string input;

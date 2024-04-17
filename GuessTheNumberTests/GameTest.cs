@@ -1,12 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GuessTheNumber;
-using System.Reflection; 
+using System.Reflection;
 namespace GameTests;
 
 [TestClass]
 public class GameTests
 {
     [TestMethod]
+    /* Esta prueba verifica si el método StartGame de la clase Game termina correctamente
+     cuando el jugador humano gana. */
     public void StartGame_HumanWins()
     {
         // Arrange - Preparar
@@ -20,6 +22,8 @@ public class GameTests
     }
 
     [TestMethod]
+    /* Esta prueba verifica si el método StartGame de la clase Game termina correctamente 
+    cuando el jugador controlado por la IA gana.*/
     public void StartGame_AIWins()
     {
         // Arrange - Preparar

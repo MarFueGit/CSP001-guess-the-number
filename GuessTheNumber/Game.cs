@@ -8,7 +8,7 @@ namespace GuessTheNumber
         private readonly Player HumanPlayer;
         private readonly Player AIPlayer;
 
-        private bool win = false;
+        private bool win;
 
         public Game()
         {
